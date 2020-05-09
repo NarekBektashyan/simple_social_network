@@ -1,0 +1,77 @@
+{% extends "accounts/base.html" %}
+{% load static  %}
+
+{% block title %}Log-in{% endblock title %}
+
+{% block content %}
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h1>Huystogramm</h1>
+                </div>
+                <div class="col-lg-6 ml-auto">
+                    <form class="" action="." method="post">
+                    <ul class="login d-flex justify-content-center">
+                        {% csrf_token %}
+                        <li class="login__items">
+                            {{ form.username }}
+                        </li>
+                        <li class="login__items">
+                            {{ form.password }}
+                        </li>
+                        <li class="login__items">
+                            <input type="submit" name="submit" class='btn btn-sm btn-info' value="login">
+                        </li>
+                    </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="register">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form class="reg" action="." method="post">
+
+                        <ul class='register-form'>
+                            {% csrf_token %}
+                            <li class="register-form__items">
+                                <h3>Create account</h3>
+                            </li>
+
+                            <li class="register-form__items">
+                                {{ register_form.first_name }}
+                            </li>
+                            <li class="register-form__items">
+                                {{ register_form.last_name }}
+                            </li>
+                            <li class="register-form__items">
+                                {{ register_form.username }}
+                            </li>
+                            <li class="register-form__items">
+                                {{ register_form.password }}
+                            </li>
+                            <li class="register-form__items">
+                                {{ register_form.password2 }}
+                            </li>
+                            <li class="register-form__items">
+                                <input type="submit" name="submit" class="btn btn-sm btn-info" value="Create">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <futter class="futter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h5> Huystogramm © 2020</h5>
+                </div>
+            </div>
+        </div>
+    </futter>
+{% endblock content %}
